@@ -27,7 +27,7 @@ def minimize (f, x0, method, jac, hess):
             #     df = df.append(df1, ignore_index=True)
             err = LA.norm(jac(x))/(1+np.absolute(f(x)))
             i += 1
-            if len(x)==2:
+            if len(x) == 2:
                 print("\\textbf{%d} & [%0.3g, %0.3g] & [%0.2f, %.2f] & %0.2g & %0.3g & %0.3g \\\\" % (i, x[0], x[1], p[0], p[1], alpha, f(x), err))
             elif len(x) == 3:
                 print("\\textbf{%d} & [%0.3g, %0.3g, %0.3g] & [%0.2f, %.2f, %.2f] & %0.2g & %0.3g & %0.3g \\\\" % (i, x[0], x[1], x[2], p[0], p[1], p[2], alpha, f(x), err))
